@@ -6,9 +6,12 @@
 
 ## Was ist TransRapport?
 
-TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es hört während Ihrer Sitzung zu und erkennt automatisch wichtige Momente - wie emotionale Veränderungen, Pausen oder therapeutische Durchbrüche. 
+TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es analysiert sowohl **Präsenz-Sitzungen** als auch **Online-Gespräche** (Zoom, Teams, Skype) und erkennt automatisch wichtige Momente - wie emotionale Veränderungen, Pausen oder therapeutische Durchbrüche.
 
-**Das System ist vollständig offline** - Ihre vertraulichen Gespräche verlassen niemals Ihren Computer.
+### 🌐 Online-Therapie & Video-Konferenzen
+**Revolutionär für Remote-Therapie**: TransRapport erfasst **System-Audio direkt vom Computer** - kein zusätzliches Mikrofon zwischen Personen nötig! Die Desktop-App (Windows/macOS) zapft virtuelle Audio-Loopbacks an und analysiert beide Gesprächspartner in Echtzeit.
+
+**Das System ist vollständig offline** - Ihre vertraulichen Gespräche verlassen niemals Ihren Computer, auch bei Online-Sessions.
 
 ## Schnellstart in 3 Schritten
 
@@ -17,10 +20,16 @@ TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es hört w
 - Warten Sie, bis "System bereit" angezeigt wird
 - Das dauert beim ersten Start etwa 1-2 Minuten
 
-### 2. 🎙️ Sitzung beginnen  
-- Klicken Sie auf den großen **"Start"** Button
+### 2. 🎙️ Sitzung beginnen
+**Für Präsenz-Gespräche:**
+- Klicken Sie auf den großen **"Start"** Button  
 - Sprechen Sie normal - das System hört automatisch zu
-- Beobachten Sie die Live-Transkription auf dem Bildschirm
+
+**Für Online-Gespräche (Zoom/Teams/Skype):**
+- Starten Sie Ihre Video-Konferenz wie gewohnt
+- Klicken Sie in TransRapport auf **"System-Audio erfassen"**
+- Das Tool erfasst automatisch beide Audio-Streams (Ein- und Ausgang)
+- Beobachten Sie die Live-Transkription beider Sprecher
 
 ### 3. 📋 Sitzung beenden
 - Klicken Sie auf **"Stop"** wenn das Gespräch zu Ende ist
@@ -37,20 +46,47 @@ TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es hört w
 ┌─────────────────────────────────────────────────────┐
 │                 TransRapport                        │
 ├─────────────────────────────────────────────────────┤
-│  🔴 Start    ⏸️ Pause    ⏹️ Stop    📁 Datei       │
+│ 🎙️ Präsenz   🌐 Online   ⏸️ Pause   ⏹️ Stop   📁 Datei │
 ├─────────────────────────────────────────────────────┤
-│                                                     │
+│ Audio-Quelle: 🔗 System-Audio (Zoom erfasst)       │
+│ Modus: 📊 Vollanalyse + LLM                        │
+├─────────────────────────────────────────────────────┤
 │  📝 Live-Transkription:                            │
-│  "Ich fühle mich heute etwas besser als letzte     │
-│   Woche. Die Übungen haben geholfen..."            │
-│                                                     │
+│  👨‍⚕️ Therapeut: "Wie geht es Ihnen heute?"          │
+│  👤 Klient: "Ich fühle mich etwas besser als       │
+│       letzte Woche. Die Übungen haben geholfen..." │
 ├─────────────────────────────────────────────────────┤
 │  🏷️ Erkannte Muster:                               │
-│  • Positive Veränderung (85%)                      │
-│  • Lange Pause (12 Sek.)                          │
-│  • Zögernde Sprechweise                           │
+│  • Positive Veränderung (85%) - SEM_POSITIVE_FUTURE│
+│  • Lange Pause (12 Sek.) - ATO_PAUSE_LONG         │
+│  • Zögernde Sprechweise - ATO_HESITATION_VOICE    │
 └─────────────────────────────────────────────────────┘
 ```
+
+### 🎛️ Die 3 Analyse-Modi
+
+TransRapport bietet **drei verschiedene Analyse-Tiefen** - wählen Sie je nach Bedarf und Rechenleistung:
+
+#### **Modus 1: 📝 Nur Transkription**
+- **Schnell & ressourcenschonend** - läuft auf jedem Computer
+- **Live-Transkription** mit Sprecher-Erkennung 
+- **Einfacher Export** als TXT oder DOCX
+- **Ideal für**: Einfache Dokumentation, schwächere Computer
+
+#### **Modus 2: 🎯 Transkription + Marker + Kurzreport**  
+- **Standardmodus** - optimales Preis-Leistungs-Verhältnis
+- **152 therapeutische Marker** in Echtzeit
+- **Automatischer Kurzreport** mit wichtigsten Erkenntnissen
+- **Prosody-Analyse** (Tonfall, Pausen, Emotionen)  
+- **Ideal für**: Reguläre Therapiesitzungen, professionelle Nutzung
+
+#### **Modus 3: 🤖 Vollanalyse + lokales LLM**
+- **Maximum-Analyse** - benötigt leistungsstarken Computer
+- **Alles aus Modus 2** + zusätzlich:
+- **Lokales LLM** für detaillierte Interpretationen
+- **Therapeutische Empfehlungen** und Interventions-Vorschläge
+- **Tiefere Muster-Analyse** und Verlaufs-Prognosen
+- **Ideal für**: Supervision, Forschung, komplexe Fälle
 
 ### Was bedeuten die Farben?
 
@@ -65,7 +101,7 @@ TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es hört w
 
 ## Schritt-für-Schritt Anleitungen
 
-### 🎙️ Live-Sitzung durchführen
+### 🎙️ Präsenz-Sitzung durchführen
 
 #### Vorbereitung (2 Minuten)
 1. **Computer einschalten** und TransRapport öffnen
@@ -74,15 +110,32 @@ TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es hört w
 4. **Ruhe schaffen**: Handy stumm, Türe zu
 
 #### Sitzung starten (30 Sekunden)
-1. **"Start" klicken** - der rote Button wird zu einem pulsierenden Kreis
-2. **Kurz warten** - "Bereit zum Aufnehmen" erscheint
+1. **"Präsenz" Modus wählen** - für lokales Mikrofon
+2. **"Start" klicken** - der Button wird zu einem pulsierenden Kreis
 3. **Normal sprechen** - das System passt sich automatisch an
 4. **Transkription beobachten** - Text erscheint mit 2-3 Sekunden Verzögerung
 
-#### Während der Sitzung (laufend)
-- **Ignorieren Sie das System** - konzentrieren Sie sich auf Ihr Gespräch  
-- **Sprechen Sie natürlich** - keine besondere Betonung nötig
-- **Bei technischen Problemen**: "Pause" klicken, Problem lösen, "Start" klicken
+### 🌐 Online-Sitzung durchführen (Zoom/Teams/Skype)
+
+#### Vorbereitung (3 Minuten)
+1. **TransRapport Desktop-App starten** (Windows/macOS)
+2. **Video-Konferenz vorbereiten** (Zoom/Teams/Skype)
+3. **Audio-Setup prüfen**: Kopfhörer empfohlen für saubere Trennung
+4. **System-Audio aktivieren**: Virtueller Audio-Driver wird automatisch installiert
+
+#### Online-Sitzung starten (1 Minute)
+1. **"Online" Modus wählen** - für System-Audio Erfassung
+2. **Konferenz-Typ auswählen**: Zoom, Teams, Skype oder "Automatisch erkennen"
+3. **"System-Audio erfassen" klicken** - beide Audio-Streams werden erfasst
+4. **Ihre Videokonferenz normal starten** - TransRapport läuft im Hintergrund
+5. **Live-Transkription beider Sprecher beobachten** - automatische Sprecher-Trennung
+
+#### Während der Online-Sitzung (laufend)
+- **Normale Videokonferenz führen** - TransRapport arbeitet unsichtbar im Hintergrund
+- **Keine spezielle Software in der Konferenz** - kein Bot oder Plugin nötig
+- **Beide Audio-Streams werden erfasst** - Ihr Mikrofon + Lautsprecher/Kopfhörer
+- **Live-Analyse läuft parallel** - STT, Marker-Erkennung, Sprecher-ID in Echtzeit
+- **Bei Problemen**: "Pause" klicken, Audio-Quelle neu wählen, "Start" klicken
 
 #### Sitzung beenden (1 Minute)
 1. **"Stop" klicken** - Aufnahme wird beendet
@@ -160,15 +213,43 @@ Sitzung vom 06.09.2025, 14:30-15:20 (50 Min.)
 
 ## Praktische Tipps
 
-### 🎙️ Optimale Aufnahme-Qualität
+### 🎙️ Optimale Audio-Qualität
 
-#### Mikrofon-Setup
+#### Präsenz-Sitzungen: Mikrofon-Setup
 - **Position**: 50-100 cm von beiden Sprechern entfernt
 - **Höhe**: Auf Tischhöhe, nicht versteckt
 - **Richtung**: Zu beiden Sprechern hin orientiert
 - **Test**: Kurz sprechen und Pegel prüfen
 
-#### Raum-Akustik  
+#### Online-Sitzungen: System-Audio Setup
+- **Kopfhörer verwenden**: Verhindert Audio-Feedback und Echo
+- **Gute Internet-Verbindung**: Für stabile Audio-Qualität in der Konferenz
+- **Audio-Einstellungen**: Automatische Rauschunterdrückung aktivieren
+- **Test vor Sitzung**: "System-Audio Test" in TransRapport durchführen
+
+#### 🔧 Technische Komponenten (Echtzeitverarbeitung)
+
+**STT-Engine (Sprache → Text)**:
+- **Whisper-CT2**: Optimiert für deutsche Sprache, läuft offline
+- **Latenz**: <200ms für Live-Transkription  
+- **Genauigkeit**: 94%+ bei guter Audio-Qualität
+
+**ProSADi (Prosody-Analyse)**:
+- **Tonfall-Erkennung**: Pitch, Intensität, Rhythmus
+- **Emotions-Detektion**: Aus Audio-Features, nicht aus Text
+- **Pause-Analyse**: Micro-Pausen bis längere Denkpausen
+
+**Marker-Engine**: 
+- **152 therapeutische Marker** aus LEAN.DEEP 3.4 Schema
+- **Echtzeit-Matching**: Pattern-Recognition während des Sprechens
+- **Multi-Modal**: Text + Audio + Prosody gleichzeitig
+
+**Sprecher-Erkennung (SID)**:
+- **ECAPA-TDNN**: State-of-the-art Speaker Identification
+- **Automatische Trennung**: Therapeut vs. Klient(en)  
+- **Enrollment**: Lernt Stimmen in den ersten 30 Sekunden
+
+#### Raum-Akustik (bei Präsenz-Sitzungen)
 - **Ruhig**: Klimaanlage, Handy, Straßenlärm minimieren
 - **Weich**: Teppich, Vorhänge reduzieren Hall
 - **Geschlossen**: Türe zu, "Nicht stören" Schild
@@ -264,16 +345,33 @@ A: Live-Analyse in Echtzeit. Datei-Analyse: ca. 1/4 der ursprünglichen Länge.
 ### 🔧 Technische Fragen  
 
 **F: Welche Computer-Anforderungen gibt es?**
-A: Windows 10/Mac OS 10.15+, 8GB RAM, 5GB Speicher, Mikrofon.
+A: Windows 10/Mac OS 10.15+, 8GB RAM, 5GB Speicher. Für Online-Modus: Virtuelle Audio-Driver (automatisch installiert).
 
 **F: Funktioniert es ohne Internet?**
-A: Ja, komplett offline nach der ersten Installation.
+A: Ja, komplett offline nach der ersten Installation. Auch Online-Gespräche werden nur lokal analysiert.
 
 **F: Kann ich mehrere Sitzungen parallel aufnehmen?**
-A: Nein, aber Sie können mehrere Computer verwenden.
+A: Eine Live-Sitzung pro Computer. Datei-Analysen können parallel laufen.
 
 **F: Was passiert bei Computer-Absturz?**
 A: Auto-Save alle 30 Sekunden. Daten gehen nicht verloren.
+
+### 🌐 Online-Therapie Fragen
+
+**F: Funktioniert es mit allen Video-Konferenz-Tools?**
+A: Ja - Zoom, Microsoft Teams, Skype, Google Meet, WebEx und andere. System-Audio Erfassung ist universal.
+
+**F: Merken die anderen Teilnehmer etwas davon?**
+A: Nein - TransRapport läuft komplett im Hintergrund. Kein Bot in der Konferenz, keine Plugins nötig.
+
+**F: Wird die Audio-Qualität der Konferenz beeinflusst?**
+A: Nein - TransRapport "hört nur zu" über virtuelle Audio-Loopbacks. Die Konferenz läuft normal weiter.
+
+**F: Was ist mit Gruppen-Gesprächen?**  
+A: Bis zu 5 Sprecher werden automatisch erkannt und getrennt dargestellt.
+
+**F: Kann ich Breakout-Rooms in Zoom analysieren?**
+A: Ja - TransRapport erfasst automatisch den aktiven Audio-Stream, auch bei Raum-Wechseln.
 
 ### 👩‍⚕️ Therapeutische Fragen
 
@@ -335,6 +433,36 @@ A: Nur wenn Sie es teilen. Sie haben vollständige Kontrolle.
 5. Update prüfen
 ```
 
+#### **Problem**: Online-Audio wird nicht erfasst
+```
+🔧 Lösungsschritte:
+1. Audio-Berechtigungen prüfen (macOS/Windows)
+2. Virtueller Audio-Driver neu installieren
+3. Konferenz-Audio testen (sprechen Sie in Zoom)
+4. "Audio-Quelle" in TransRapport neu wählen
+5. Computer neu starten, dann Konferenz neu starten
+```
+
+#### **Problem**: Nur eine Seite wird transkribiert  
+```
+🔧 Lösungsschritte:
+1. Kopfhörer verwenden (nicht Lautsprecher)
+2. Audio-Einstellungen: "Stereo Mix" aktivieren
+3. Konferenz-Einstellungen: "Original Sound" aktivieren
+4. TransRapport: "Beide Kanäle erfassen" wählen
+5. Audio-Test mit Freund/Kollege durchführen
+```
+
+#### **Problem**: Echo oder doppelte Transkription
+```
+🔧 Lösungsschritte:  
+1. Kopfhörer verwenden (nie Lautsprecher bei Online-Sitzungen)
+2. Echo-Unterdrückung in Konferenz-Software aktivieren
+3. TransRapport: "Echo-Filter" aktivieren
+4. Mikrofon-Pegel in Konferenz reduzieren
+5. Bei hartnäckigem Echo: "Nur Mikrofon erfassen" wählen
+```
+
 ### 📞 Support kontaktieren
 
 Bei anhaltenden Problemen:
@@ -359,40 +487,49 @@ Bei anhaltenden Problemen:
 - [ ] Kurze Test-Aufnahme (2 Minuten)
 - [ ] Ergebnis ansehen und verstehen
 
-### Tag 2: Erste echte Sitzung 🎯  
+### Tag 2: Erste Präsenz-Sitzung 🎯  
 - [ ] Mit vertrauter Person üben (Freund/Kollege)
-- [ ] 15-20 Minuten normales Gespräch
+- [ ] 15-20 Minuten normales Gespräch im Präsenz-Modus
 - [ ] System ignorieren, natürlich sprechen
 - [ ] Bericht gemeinsam durchgehen
 
-### Tag 3: Einstellungen anpassen 🔧
+### Tag 3: Online-Sitzung testen 🌐
+- [ ] Zoom/Teams-Testanruf mit Freund/Kollege
+- [ ] Online-Modus in TransRapport ausprobieren
+- [ ] System-Audio Erfassung testen (beide Seiten hörbar?)
+- [ ] Verschiedene Analyse-Modi (1, 2, 3) vergleichen
+
+### Tag 4: Einstellungen anpassen 🔧
 - [ ] Empfindlichkeit für Ihre Stimme optimieren
 - [ ] Marker-Typen nach Interesse aktivieren/deaktivieren  
 - [ ] Berichts-Format nach Wunsch anpassen
-- [ ] Backup-Routine einrichten
+- [ ] Audio-Setup für Online und Präsenz optimieren
 
-### Tag 4: Erste Klienten-Sitzung 👤
+### Tag 5: Erste echte Klienten-Sitzung 👤
 - [ ] Klient über System informieren und Zustimmung einholen
+- [ ] Präsenz oder Online - je nach Praxis-Setup  
 - [ ] Kurz erklären, dann vergessen
-- [ ] Normale Sitzung durchführen  
+- [ ] Normale Sitzung durchführen (Modus 2 empfohlen)
 - [ ] Bericht nachher in Ruhe durchgehen
 
-### Tag 5: Auswertung und Reflexion 📊
+### Tag 6: Auswertung und Reflexion 📊
 - [ ] Bericht der gestrigen Sitzung analysieren
 - [ ] Überraschende Erkenntnisse notieren
 - [ ] Mit Kollegen/Supervisor besprechen
 - [ ] Eigene Notizen mit System-Erkenntnissen vergleichen
+- [ ] Online vs. Präsenz: Was funktioniert besser?
 
-### Tag 6: Fortgeschrittene Features 🚀
+### Tag 7: Fortgeschrittene Features 🚀
+- [ ] Modus 3 (+ LLM) ausprobieren bei komplexem Fall
 - [ ] Datei-Upload mit alter Aufnahme testen
-- [ ] Mehrere Sitzungen vergleichen
-- [ ] Export-Funktionen ausprobieren
-- [ ] Verlaufs-Dokumentation beginnen
+- [ ] Export-Funktionen für verschiedene Formate testen
+- [ ] Gruppen-Gespräch analysieren (falls anwendbar)
 
-### Tag 7: Routine etablieren ✅
-- [ ] Workflow für reguläre Nutzung definieren  
-- [ ] Feste Zeiten für Bericht-Durchsicht
-- [ ] Klienten-Aufklärung standardisieren
+### Tag 8: Routine etablieren ✅
+- [ ] Workflow für Online- und Präsenz-Sitzungen definieren  
+- [ ] Optimalen Analyse-Modus für verschiedene Situationen wählen
+- [ ] Klienten-Aufklärung für beide Modi standardisieren
+- [ ] Backup-Routine auch für Online-Sessions etablieren
 - [ ] Erfolg feiern! 🎉
 
 ---
