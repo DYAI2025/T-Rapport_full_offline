@@ -1,0 +1,745 @@
+/* TransRapport - Live Transkription Frontend */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(90deg, #2d1b69 0%, #11998e 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-content h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #a8e6cf;
+  margin: 0;
+  font-weight: 300;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #666;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.status-dot.online {
+  background-color: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+}
+
+.status-dot.offline {
+  background-color: #f87171;
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Main Layout */
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  height: calc(100vh - 80px);
+}
+
+/* Live Transkription Area */
+.transcription-area {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.transcription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.transcription-header h2 {
+  font-size: 1.3rem;
+  color: #a8e6cf;
+  font-weight: 600;
+}
+
+.session-info {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.transcription-display {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(168, 230, 207, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 400px;
+  font-family: "SF Mono", Monaco, Consolas, monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  overflow-y: auto;
+  position: relative;
+}
+
+.transcription-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.mic-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.hint {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+/* Marker Analysis Area */
+.marker-area {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.marker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.marker-header h3 {
+  font-size: 1rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.marker-count {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.marker-display {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+  font-size: 0.9rem;
+  overflow-y: auto;
+}
+
+.marker-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Control Panel */
+.control-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primary-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.btn-danger:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* File Upload */
+.file-input-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  color: #a8e6cf;
+}
+
+.file-label:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(168, 230, 207, 0.6);
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
+
+.file-info {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Export Options */
+.export-options {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.export-options h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #a8e6cf;
+}
+
+.export-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.btn-export {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-export:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Advanced Options */
+.advanced-options {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(168, 230, 207, 0.4);
+  color: #a8e6cf;
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  width: 100%;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(168, 230, 207, 0.1);
+  border-color: rgba(168, 230, 207, 0.6);
+}
+
+/* Modal für Vollständige Transkription */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-header h3 {
+  color: #a8e6cf;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.transcript-document {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.document-header {
+  border-bottom: 2px solid rgba(168, 230, 207, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.document-header h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.document-meta {
+  display: flex;
+  gap: 2rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.transcript-content {
+  font-family: "SF Mono", Monaco, Consolas, monospace;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.no-content {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* Live Transcription Highlighting */
+.transcript-line {
+  padding: 0.5rem 0;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.transcript-line.current {
+  background: rgba(168, 230, 207, 0.1);
+  border-left-color: #a8e6cf;
+  animation: highlight 0.5s ease;
+}
+
+.marker-highlight {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.3) 0%, rgba(245, 158, 11, 0.3) 100%);
+  color: #fbbf24;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  animation: markerPulse 0.8s ease;
+}
+
+@keyframes highlight {
+  0% { background: rgba(168, 230, 207, 0.3); }
+  100% { background: rgba(168, 230, 207, 0.1); }
+}
+
+@keyframes markerPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Marker Event Items */
+.marker-event {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  animation: slideIn 0.3s ease;
+}
+
+.marker-event .marker-type {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.marker-event .marker-score {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.marker-event .marker-time {
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Recording State Indicators */
+.recording {
+  animation: recordingPulse 1s infinite;
+}
+
+@keyframes recordingPulse {
+  0%, 100% { 
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% { 
+    border-color: rgba(239, 68, 68, 0.8);
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}
+
+/* Marker-Liste Styling */
+.marker-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.marker-list .marker-placeholder {
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Marker-Badges farblich konsistent */
+.marker-item { 
+  padding: 0.4rem 0.8rem; 
+  border-radius: 20px; 
+  background: rgba(255,255,255,0.06); 
+  margin: 0.3rem 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.marker-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.marker-negation { 
+  border: 1px solid #a78bfa; 
+  color: #a78bfa;
+}
+
+.marker-intent { 
+  border: 1px solid #60a5fa; 
+  color: #60a5fa;
+}
+
+.marker-action { 
+  border: 1px solid #14b8a6; 
+  color: #14b8a6;
+}
+
+.marker-risk { 
+  border: 1px solid #fb923c; 
+  color: #fb923c;
+}
+
+.marker-probe {
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+}
+
+.marker-type {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.marker-count-badge {
+  background: rgba(255,255,255,0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+/* Aufnahmezustand */
+.recording .transcription-display { 
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.65), 0 0 30px rgba(239,68,68,0.25);
+  animation: recordingGlow 2s infinite;
+}
+
+@keyframes recordingGlow {
+  0%, 100% { 
+    box-shadow: 0 0 0 2px rgba(239,68,68,0.4), 0 0 20px rgba(239,68,68,0.2);
+  }
+  50% { 
+    box-shadow: 0 0 0 2px rgba(239,68,68,0.8), 0 0 40px rgba(239,68,68,0.4);
+  }
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  animation: slideInToast 0.3s ease;
+}
+
+@keyframes slideInToast {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Modal Verbesserungen */
+.marker-summary {
+  padding: 1rem;
+}
+
+.marker-entry {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #e0e0e0;
+}
+
+.marker-entry:last-child {
+  border-bottom: none;
+}
+
+.line {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.line:last-child {
+  border-bottom: none;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.spk {
+  font-weight: 600;
+  color: #a8e6cf;
+}
+
+.ts {
+  font-family: monospace;
+}

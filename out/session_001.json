@@ -1,0 +1,286 @@
+{
+  "session": "session-cbac62f5",
+  "input": "tests/data/hello.wav",
+  "events": [
+    {
+      "id": "M_PROSODY_LOUDNESS_SPIKE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.0,
+      "span": "00:00.00-00:01.50",
+      "meta": {
+        "z": 462581.01
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999999993,
+      "ts": 0.0,
+      "span": "00:00.00-00:01.00",
+      "meta": {
+        "df0": 385.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.01,
+      "span": "00:00.01-00:01.01",
+      "meta": {
+        "df0": 415.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.02,
+      "span": "00:00.02-00:01.02",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.03,
+      "span": "00:00.03-00:01.03",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.04,
+      "span": "00:00.04-00:01.04",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.05,
+      "span": "00:00.05-00:01.05",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.06,
+      "span": "00:00.06-00:01.06",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.07,
+      "span": "00:00.07-00:01.07",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.08,
+      "span": "00:00.08-00:01.08",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.09,
+      "span": "00:00.09-00:01.09",
+      "meta": {
+        "df0": 445.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.1,
+      "span": "00:00.10-00:01.10",
+      "meta": {
+        "df0": 415.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999999993,
+      "ts": 0.11,
+      "span": "00:00.11-00:01.11",
+      "meta": {
+        "df0": 385.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999999885,
+      "ts": 0.12,
+      "span": "00:00.12-00:01.12",
+      "meta": {
+        "df0": 356.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999997777,
+      "ts": 0.13,
+      "span": "00:00.13-00:01.13",
+      "meta": {
+        "df0": 326.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999956801,
+      "ts": 0.14,
+      "span": "00:00.14-00:01.14",
+      "meta": {
+        "df0": 296.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999999160694,
+      "ts": 0.15,
+      "span": "00:00.15-00:01.15",
+      "meta": {
+        "df0": 267.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999983692889,
+      "ts": 0.16,
+      "span": "00:00.16-00:01.16",
+      "meta": {
+        "df0": 237.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999999683164599,
+      "ts": 0.17,
+      "span": "00:00.17-00:01.17",
+      "meta": {
+        "df0": 207.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999993844119831,
+      "ts": 0.18,
+      "span": "00:00.18-00:01.18",
+      "meta": {
+        "df0": 178.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9999880397036508,
+      "ts": 0.19,
+      "span": "00:00.19-00:01.19",
+      "meta": {
+        "df0": 148.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9997676712614021,
+      "ts": 0.2,
+      "span": "00:00.20-00:01.20",
+      "meta": {
+        "df0": 118.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9955052647409861,
+      "ts": 0.21,
+      "span": "00:00.21-00:01.21",
+      "meta": {
+        "df0": 89.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_RISE",
+      "type": "prosody",
+      "score": 0.9193510628244315,
+      "ts": 0.22,
+      "span": "00:00.22-00:01.22",
+      "meta": {
+        "df0": 59.3
+      }
+    },
+    {
+      "id": "M_PROSODY_RATE_FAST",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.0,
+      "span": "00:00.00-00:01.50",
+      "meta": {
+        "wpm": 1760
+      }
+    },
+    {
+      "id": "M_PROSODY_HESITATION",
+      "type": "prosody",
+      "score": 0.7310585786300049,
+      "ts": 0.0,
+      "span": "00:00.00-00:01.50",
+      "meta": {
+        "dips": 2
+      }
+    },
+    {
+      "id": "M_PROSODY_RATE_SLOW",
+      "type": "prosody",
+      "score": 0.975075573352886,
+      "ts": 1.5,
+      "span": "00:01.50-00:02.00",
+      "meta": {
+        "wpm": 0
+      }
+    },
+    {
+      "id": "M_PROSODY_HESITATION",
+      "type": "prosody",
+      "score": 0.6224593312018546,
+      "ts": 1.5,
+      "span": "00:01.50-00:02.00",
+      "meta": {
+        "dips": 1
+      }
+    }
+  ]
+}

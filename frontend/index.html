@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransRapport - Live Transkription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <h1>TransRapport</h1>
+      <p class="tagline">Live Transkription & Marker Analyse</p>
+    </div>
+    <div class="connection-status">
+      <span id="status-indicator" class="status-dot offline"></span>
+      <span id="status-text">Offline</span>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- Live Transkription Hauptbereich -->
+    <section class="transcription-area">
+      <div class="transcription-header">
+        <h2>Live Transkription</h2>
+        <div class="session-info">
+          <span id="session-id">Session: Bereit</span>
+          <span id="session-timer">00:00</span>
+        </div>
+      </div>
+      
+      <div class="transcription-display" id="transcription-display">
+        <div class="transcription-placeholder">
+          <div class="mic-icon">🎤</div>
+          <p>Bereit für Live-Transkription</p>
+          <p class="hint">Wählen Sie eine Audio-Datei oder starten Sie die Aufnahme</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marker Analyse Bereich -->
+    <section class="marker-area">
+      <div class="marker-header">
+        <h3>Live Marker Events</h3>
+        <div class="marker-stats">
+          <span class="marker-count" id="marker-count">0 Events</span>
+        </div>
+      </div>
+      
+      <div class="marker-display" id="marker-display">
+        <ul id="marker-list" class="marker-list">
+          <li class="marker-placeholder">Marker Events erscheinen hier nach der Verarbeitung</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Control Panel -->
+    <aside class="control-panel">
+      <div class="primary-controls">
+        <button class="btn-primary btn-start" id="btn-start">
+          <span class="btn-icon">▶</span>
+          <span>Starten</span>
+        </button>
+        
+        <button class="btn-secondary btn-pause" id="btn-pause" disabled>
+          <span class="btn-icon">⏸</span>
+          <span>Pause</span>
+        </button>
+        
+        <button class="btn-danger btn-stop" id="btn-stop" disabled>
+          <span class="btn-icon">⏹</span>
+          <span>Stopp & Export</span>
+        </button>
+      </div>
+
+      <div class="file-input-section">
+        <label for="file-input" class="file-label">
+          <span class="file-icon">📁</span>
+          <span>Audio-Datei wählen</span>
+        </label>
+        <input type="file" id="file-input" accept=".wav,.mp3,.m4a,.flac,.txt" aria-label="Audiodatei auswählen" hidden>
+        <div class="file-info" id="file-info"></div>
+      </div>
+
+      <div class="export-options" id="export-options" style="display: none;">
+        <h4>Export als:</h4>
+        <div class="export-buttons">
+          <button class="btn-export" data-format="txt">
+            <span>📄</span> Text
+          </button>
+          <button class="btn-export" data-format="docx">
+            <span>📝</span> Word
+          </button>
+          <button class="btn-export" data-format="pdf">
+            <span>📑</span> PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="advanced-options">
+        <button class="btn-outline" id="btn-full-transcript">
+          <span>📋</span> Vollständige Transkription
+        </button>
+        <button class="btn-outline" id="btn-marker-analysis">
+          <span>🔍</span> Marker Analyse
+        </button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal für Vollständige Transkription -->
+  <div class="modal" id="transcript-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Vollständige Transkription</h3>
+        <button class="modal-close" id="close-transcript">&times;</button>
+      </div>
+      <div class="modal-body" id="full-transcript-content">
+        <div class="transcript-document">
+          <div class="document-header">
+            <h4 id="document-title">Transkription vom [Datum]</h4>
+            <div class="document-meta">
+              <p>Session: <span id="doc-session-id">-</span></p>
+              <p>Dauer: <span id="doc-duration">-</span></p>
+            </div>
+          </div>
+          <div class="transcript-content" id="full-transcript">
+            <p class="no-content">Noch keine Transkription verfügbar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

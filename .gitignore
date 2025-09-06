@@ -1,0 +1,259 @@
+# TransRapport - Git Ignore File
+# Ausschluss von großen Dateien, Modellen und temporären Daten
+
+# === MODELLE UND ASSETS (GROSS) ===
+# CT2/Whisper Modelle (mehrere GB)
+models/
+*.bin
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.model
+
+# ECAPA/Speaker-ID Modelle
+*/ecapa/
+*/speaker_models/
+*.ckpt
+*.h5
+*.pkl
+*.joblib
+
+# Audio-Dateien und Temp-Files
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+temp/
+tmp/
+audio_cache/
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === LOGS UND DATEN ===
+logs/
+*.log
+*.log.*
+log_*.txt
+
+# Session-Daten (vertraulich)
+sessions/
+data/sessions/
+*.session
+*.transcript
+
+# Backup-Dateien
+backups/
+*.backup
+*.bak
+*~
+
+# === KONFIGURATION (SENSITIV) ===
+# Lokale Umgebungsvariablen
+.env.local
+.env.production
+.env.development
+config.local.*
+secrets.json
+
+# User-spezifische Konfiguration
+user_config.json
+*.user.json
+local_settings.py
+
+# === BETRIEBSSYSTEM ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === ENTWICKLUNG ===
+# IDE-spezifische Dateien
+.idea/
+.vscode/settings.json
+.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# Test-Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# === DOCKER ===
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# === NODE.JS (falls Frontend erweitert wird) ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# === JUPYTER NOTEBOOKS ===
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# === SPEZIFISCHE TRANSRAPPORT DATEIEN ===
+# Bundle-Cache (regenerierbar)
+bundles/.cache/
+*.bundle.cache
+
+# Detector-Ausgaben (temp)
+detectors/output/
+detectors/temp/
+
+# Scoring-Cache
+scoring/cache/
+*.scores.temp
+
+# Frontend Build-Artefakte
+frontend/dist/
+frontend/build/
+frontend/node_modules/
+
+# Database-Dateien (falls SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# === MODELL-SPEZIFISCHE AUSSCHLÜSSE ===
+# Whisper-spezifische Dateien
+*whisper*
+*faster-whisper*
+*.vocab
+*.spm
+
+# ECAPA-TDNN Modelle
+*ecapa*
+*tdnn*
+*voxceleb*
+
+# Prosody-Modelle
+*prosody*
+*.praat
+*.textgrid
+
+# === ARCHIVE UND KOMPRIMIERTE DATEIEN ===
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# Aber Archiv.zip in detectors/ behalten (scheint wichtig zu sein)
+!detectors/Archiv.zip
+
+# === PERFORMANCE UND PROFILING ===
+*.prof
+*.profile
+.profiling/
+
+# === SICHERHEIT ===
+# SSL-Zertifikate
+*.pem
+*.key
+*.crt
+*.p12
+
+# API-Keys und Secrets
+api_keys.txt
+secrets.env
+.secrets
+credentials.json
+
+# === DOKUMENTATION BUILD ===
+docs/_build/
+docs/build/
+site/
+
+# === CUSTOM RULES ===
+# Erlaubte große Dateien explizit definieren
+!README.md
+!INSTALLATION.md
+!BENUTZERHANDBUCH.md
+!API_DOCUMENTATION.md
+!MARKER_REFERENCE.md
+
+# Wichtige Konfigurationsdateien behalten
+!requirements.lock
+!Makefile
+!docker-compose.yml
+!.github/

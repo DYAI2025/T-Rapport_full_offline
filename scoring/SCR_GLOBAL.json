@@ -1,0 +1,6 @@
+{
+  "schema_version":"3.4",
+  "weights":{"poseid":1.5,"risk":1.2,"negation":1.0,"intent":0.9,"action":0.8,"prosody":1.0},
+  "fusion":{"method":"weighted_sum","normalize":true,"cap":1.0},
+  "thresholds":{"emit_event":0.55}
+}

@@ -1,0 +1,126 @@
+{
+  "session": "session-cde13d7f",
+  "input": "tmp/hello.wav",
+  "events": [
+    {
+      "id": "M_PROSODY_LOUDNESS_SPIKE",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.88,
+      "span": "00:00.88-00:01.98",
+      "meta": {
+        "z": 462581.01
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.8736432027855767,
+      "ts": 0.89,
+      "span": "00:00.89-00:01.89",
+      "meta": {
+        "df0": -59.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.992610979502659,
+      "ts": 0.9,
+      "span": "00:00.90-00:01.90",
+      "meta": {
+        "df0": -89.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.999617012389467,
+      "ts": 0.91,
+      "span": "00:00.91-00:01.91",
+      "meta": {
+        "df0": -118.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.9999802809580032,
+      "ts": 0.92,
+      "span": "00:00.92-00:01.92",
+      "meta": {
+        "df0": -148.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.9999989850673479,
+      "ts": 0.93,
+      "span": "00:00.93-00:01.93",
+      "meta": {
+        "df0": -178.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.9999999477626748,
+      "ts": 0.94,
+      "span": "00:00.94-00:01.94",
+      "meta": {
+        "df0": -207.7
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.999999997311412,
+      "ts": 0.95,
+      "span": "00:00.95-00:01.95",
+      "meta": {
+        "df0": -237.3
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.9999999998616218,
+      "ts": 0.96,
+      "span": "00:00.96-00:01.96",
+      "meta": {
+        "df0": -267.0
+      }
+    },
+    {
+      "id": "M_PROSODY_PITCH_DROP",
+      "type": "prosody",
+      "score": 0.9999999999928779,
+      "ts": 0.97,
+      "span": "00:00.97-00:01.97",
+      "meta": {
+        "df0": -296.7
+      }
+    },
+    {
+      "id": "M_PROSODY_RATE_FAST",
+      "type": "prosody",
+      "score": 1.0,
+      "ts": 0.88,
+      "span": "00:00.88-00:01.98",
+      "meta": {
+        "wpm": 2400
+      }
+    },
+    {
+      "id": "M_PROSODY_HESITATION",
+      "type": "prosody",
+      "score": 0.6224593312018546,
+      "ts": 0.88,
+      "span": "00:00.88-00:01.98",
+      "meta": {
+        "dips": 1
+      }
+    }
+  ]
+}

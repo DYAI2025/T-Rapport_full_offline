@@ -1,0 +1,10 @@
+# API-Erweiterung & Static Frontend Mount
+In `app/adapter.py` ergänzen:
+
+from fastapi.staticfiles import StaticFiles
+from app.adapter_ext import attach_extra_routes
+
+app.mount('/', StaticFiles(directory='frontend', html=True), name='static')
+attach_extra_routes(app)
+
+Start mit `make dev`. UI unter http://127.0.0.1:8765
