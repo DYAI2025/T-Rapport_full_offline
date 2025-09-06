@@ -11,7 +11,7 @@ TransRapport ist ein intelligenter Assistent für Therapiegespräche. Es analysi
 ### 🌐 Online-Therapie & Video-Konferenzen
 **Revolutionär für Remote-Therapie**: TransRapport erfasst **System-Audio direkt vom Computer** - kein zusätzliches Mikrofon zwischen Personen nötig! Die Desktop-App (Windows/macOS) zapft virtuelle Audio-Loopbacks an und analysiert beide Gesprächspartner in Echtzeit.
 
-**Das System ist vollständig offline** - Ihre vertraulichen Gespräche verlassen niemals Ihren Computer, auch bei Online-Sessions.
+**🔒 Datenschutz durch Einfachheit**: TransRapport bleibt **immer offline** - egal ob Präsenz-Gespräch oder Online-Konferenz. Alle Audio-Daten werden nur lokal verarbeitet und gespeichert. **Uns ist egal, woher das Audio kommt** - Hauptsache es bleibt bei TransRapport auf Ihrem Computer!
 
 ## Schnellstart in 3 Schritten
 
@@ -290,11 +290,14 @@ Das System erstellt automatisch:
 
 ### 🔒 Ihre Daten bleiben bei Ihnen
 
-#### Vollständig Offline
-- **Keine Internet-Verbindung** während Analyse nötig
-- **Alle Daten** bleiben auf Ihrem Computer
-- **Keine Cloud-Upload** - niemals automatisch übertragen
-- **Lokale Verschlüsselung** aller gespeicherten Dateien
+#### Vollständig Offline - Einfach & Sicher
+- **TransRapport ist immer offline** - egal ob Präsenz oder Online-Gespräche
+- **Audio-Quelle ist irrelevant** - Mikrofon oder System-Audio, alles bleibt lokal
+- **Keine Internet-Verbindung nötig** - weder für Analyse noch für Speicherung
+- **Alle Daten bleiben bei Ihnen** - verschlüsselt auf Ihrem Computer
+- **Keine Cloud, kein Upload, keine Übertragung** - niemals, nirgendwohin
+
+**🎯 Datenschutz-Prinzip**: Wir machen es uns einfach - TransRapport "weiß" nicht mal, dass es Online-Gespräche gibt. Es verarbeitet nur lokales Audio und speichert nur lokal. Fertig.
 
 #### Daten-Management
 - **Speicherort**: `/TransRapport/Sitzungen/`
@@ -302,11 +305,13 @@ Das System erstellt automatisch:
 - **Backup**: Auf externe Festplatte kopieren
 - **Löschen**: Dateien sicher überschreiben
 
-#### DSGVO-Konformität
-- **Einverständnis**: Klienten über Aufzeichnung informieren
+#### DSGVO-Konformität - Einfach durch Offline-First
+- **Einverständnis**: Klienten über Aufzeichnung informieren (gilt für alle Modi)
 - **Zweckbindung**: Nur für therapeutische Zwecke nutzen
 - **Löschfristen**: Nach Behandlungsende archivieren/löschen
 - **Zugriff**: Nur autorisierte Personen
+- **Audio-Quelle irrelevant**: TransRapport ist immer datenschutzkonform - egal ob Mikrofon, System-Audio oder Online-Konferenz
+- **Keine zusätzlichen Risiken**: Online-Modus ändert nichts am Datenschutz-Level von TransRapport
 
 ### 🛡️ Sicherheits-Checkliste
 
@@ -348,7 +353,7 @@ A: Live-Analyse in Echtzeit. Datei-Analyse: ca. 1/4 der ursprünglichen Länge.
 A: Windows 10/Mac OS 10.15+, 8GB RAM, 5GB Speicher. Für Online-Modus: Virtuelle Audio-Driver (automatisch installiert).
 
 **F: Funktioniert es ohne Internet?**
-A: Ja, komplett offline nach der ersten Installation. Auch Online-Gespräche werden nur lokal analysiert.
+A: Ja, komplett offline. TransRapport braucht nie Internet - weder für Präsenz noch für "Online"-Gespräche. Das Audio wird immer nur lokal verarbeitet, egal woher es kommt.
 
 **F: Kann ich mehrere Sitzungen parallel aufnehmen?**
 A: Eine Live-Sitzung pro Computer. Datei-Analysen können parallel laufen.
@@ -365,7 +370,7 @@ A: Ja - Zoom, Microsoft Teams, Skype, Google Meet, WebEx und andere. System-Audi
 A: Nein - TransRapport läuft komplett im Hintergrund. Kein Bot in der Konferenz, keine Plugins nötig.
 
 **F: Wird die Audio-Qualität der Konferenz beeinflusst?**
-A: Nein - TransRapport "hört nur zu" über virtuelle Audio-Loopbacks. Die Konferenz läuft normal weiter.
+A: Nein - TransRapport "hört nur zu" über virtuelle Audio-Loopbacks. Die Konferenz läuft normal weiter. TransRapport ist für Zoom/Teams unsichtbar.
 
 **F: Was ist mit Gruppen-Gesprächen?**  
 A: Bis zu 5 Sprecher werden automatisch erkannt und getrennt dargestellt.
@@ -386,6 +391,9 @@ A: Nutzen Sie sie für Supervision, Verlaufsdokumentation und Selbstreflexion.
 
 **F: Können Klienten die Ergebnisse sehen?**
 A: Nur wenn Sie es teilen. Sie haben vollständige Kontrolle.
+
+**F: Ist TransRapport bei Online-Gesprächen auch DSGVO-konform?**
+A: **Ja, absolut!** TransRapport selbst ist immer offline, egal woher das Audio kommt. Wir speichern nur lokal - ob das Audio vom Mikrofon oder aus Zoom kommt, ist für den Datenschutz irrelevant. **Einfach = sicher.**
 
 ---
 
